@@ -10,4 +10,9 @@
 
 @interface Category : NSObject
 
+@property (strong, nonatomic) NSString *categoryName;
+@property (strong, nonatomic) NSArray *subCategoryArray;
+
+-(id)initWithCategoryName:(NSString *)categoryName andSubCategoryArray:(NSArray *)subCategoryArray;
+
 @end

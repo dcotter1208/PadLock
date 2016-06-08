@@ -10,4 +10,19 @@
 
 @implementation Category
 
+-(id)initWithCategoryName:(NSString *)categoryName andSubCategoryArray:(NSArray *)subCategoryArray {
+    
+    self = [super init];
+    
+    if (self) {
+        _categoryName = categoryName;
+        _subCategoryArray = subCategoryArray;
+    }
+    
+    return self;
+}
+
+
+
+
 @end

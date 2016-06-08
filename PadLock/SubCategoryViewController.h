@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewController.h
+//  SubCategoryViewController.h
 //  PadLock
 //
 //  Created by Srinivas Bodhanampati on 6/8/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoryTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SubCategoryViewController : UIViewController
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "CategoryTableViewController.h"
+#import "Category.h"
 
 @interface CategoryTableViewController ()
 
@@ -14,9 +15,11 @@
 
 @implementation CategoryTableViewController
 
+NSArray *categoryArray;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self createCategory];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -29,27 +32,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)createCategory {
+    Category *category1 = [[Category alloc]initWithCategoryName:@"Sports" andSubCategoryArray:@[@""]];
+    Category *category2 = [[Category alloc]initWithCategoryName:@"Movies" andSubCategoryArray:@[@""]];
+    Category *category3 = [[Category alloc]initWithCategoryName:@"History" andSubCategoryArray:@[@""]];
+    
+    categoryArray = @[category1,category2,category3];
+}
+
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return [categoryArray count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
     
     // Configure the cell...
     
+    Category *category = [categoryArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = category.categoryName;
+    
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
