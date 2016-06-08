@@ -70,9 +70,12 @@ NSArray *categoryArray;
     SubCategoryViewController *destVC = [segue destinationViewController];
     
     NSIndexPath *indexPath = [_categoryTableView indexPathForSelectedRow];
-
-    destVC.subCategoryArray = [categoryArray objectAtIndex:indexPath.row];
     
+    //Similar to the cellForRowAtIndexPath in the tableView method we make a new category object and assign it to the obejct and indexPath.row. This grabs our selected object.
+    Category *category = [categoryArray objectAtIndex:indexPath.row];
+
+    //We use that selected object 'category' and access its 'subCategoryArray' then set the subCategoryArray on the destVC with that array.
+    destVC.subCategoryArray = category.subCategoryArray;
 }
 
 @end

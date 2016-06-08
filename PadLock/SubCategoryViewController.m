@@ -7,6 +7,7 @@
 //
 
 #import "SubCategoryViewController.h"
+#import "SubCategory.h"
 
 @interface SubCategoryViewController ()
 
@@ -16,10 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    _subCategoryArray = [[NSArray alloc]init];
-    NSLog(@"%@", _subCategoryArray.description);
-
+    
+    for (SubCategory *sub in _subCategoryArray) {
+        NSLog(@"%@", sub.subCategoryName);
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

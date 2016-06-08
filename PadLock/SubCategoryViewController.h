@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Category.h"
 
 @interface SubCategoryViewController : UIViewController
 
