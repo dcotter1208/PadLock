@@ -10,4 +10,6 @@
 
 @interface SubCategoryViewController : UIViewController
 
+@property(strong, nonatomic) NSArray *subCategoryArray;
+
 @end

@@ -7,9 +7,12 @@
 //
 
 #import "CategoryTableViewController.h"
+#import "SubCategoryViewController.h"
 #import "Category.h"
+#import "SubCategory.h"
 
 @interface CategoryTableViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
 
 @end
 
@@ -19,7 +22,7 @@ NSArray *categoryArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createCategory];
+    [self setupTriviaQuestionsAndCategories];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -32,8 +35,13 @@ NSArray *categoryArray;
     // Dispose of any resources that can be recreated.
 }
 
--(void)createCategory {
-    Category *category1 = [[Category alloc]initWithCategoryName:@"Sports" andSubCategoryArray:@[@""]];
+-(void)setupTriviaQuestionsAndCategories {
+    
+    SubCategory *subCat1 = [[SubCategory alloc]initWithSubCategoryName:@"NFL" andQuestionArray:@[@""]];
+    SubCategory *subCat2 = [[SubCategory alloc]initWithSubCategoryName:@"NBA" andQuestionArray:@[@""]];
+
+    
+    Category *category1 = [[Category alloc]initWithCategoryName:@"Sports" andSubCategoryArray:@[subCat1, subCat2]];
     Category *category2 = [[Category alloc]initWithCategoryName:@"Movies" andSubCategoryArray:@[@""]];
     Category *category3 = [[Category alloc]initWithCategoryName:@"History" andSubCategoryArray:@[@""]];
     
@@ -50,9 +58,7 @@ NSArray *categoryArray;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+
     Category *category = [categoryArray objectAtIndex:indexPath.row];
     cell.textLabel.text = category.categoryName;
     
@@ -60,48 +66,13 @@ NSArray *categoryArray;
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    SubCategoryViewController *destVC = [segue destinationViewController];
+    
+    NSIndexPath *indexPath = [_categoryTableView indexPathForSelectedRow];
+
+    destVC.subCategoryArray = [categoryArray objectAtIndex:indexPath.row];
+    
 }
-*/
 
 @end
