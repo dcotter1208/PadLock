@@ -10,4 +10,9 @@
 
 @interface SubCategory : NSObject
 
+@property(strong, nonatomic) NSString *subCategoryName;
+@property(strong, nonatomic) NSArray *questionArray;
+
+-(id)initWithSubCategoryName:(NSString *)subCategoryName andQuestionArray:(NSArray *)questionArray;
+
 @end
