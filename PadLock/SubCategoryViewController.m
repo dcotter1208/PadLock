@@ -18,10 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    for (SubCategory *sub in _subCategoryArray) {
-        NSLog(@"%@", sub.subCategoryName);
-    }
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +25,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-//subCatCell
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [_subCategoryArray count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"subCatCell" forIndexPath:indexPath];
+    
+    SubCategory *subCategory = [_subCategoryArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = subCategory.subCategoryName;
+    
+    return cell;
+}
 
 @end

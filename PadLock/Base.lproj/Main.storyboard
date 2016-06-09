@@ -44,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256" y="-518"/>
+            <point key="canvasLocation" x="172" y="-518"/>
         </scene>
         <!--Category Table View Controller-->
         <scene sceneID="fQi-yb-Ptg">
@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nI-da-i1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736" y="-518"/>
+            <point key="canvasLocation" x="632" y="-518"/>
         </scene>
         <!--Sub Category View Controller-->
         <scene sceneID="jaU-Iw-7Df">
@@ -116,6 +116,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bph-UR-mjl" id="a2A-ga-ieS"/>
+                                    <outlet property="delegate" destination="bph-UR-mjl" id="cqB-MS-8Xs"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -124,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPA-OD-g43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="-518"/>
+            <point key="canvasLocation" x="1064" y="-518"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ta1-z8-xem">
