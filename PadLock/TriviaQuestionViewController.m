@@ -10,20 +10,23 @@
 #import "Question.h"
 
 @interface TriviaQuestionViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *questionAnswerTableView;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @end
 
 Question *question;
 NSArray *answerArray;
+int currentQuestionIndex;
 
 @implementation TriviaQuestionViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+//    [self.navigationController setNavigationBarHidden:true];
     
-    question = _subCategory.questionArray[0];
+    [super viewDidLoad];
+    currentQuestionIndex = 0;
+    question = _subCategory.questionArray[currentQuestionIndex];
     [self shuffleArray:question.answerArray];
-    NSLog(@"Answer Array: %@", question.answerArray.description);
     _questionLabel.text = question.question;
     
 }
@@ -58,10 +61,8 @@ NSArray *answerArray;
 -(void)checkForAnswerCorrectness:(NSString *)answer {
     
     if ([answer isEqualToString:question.correctAnswer]) {
-        NSLog(@"Correct Answer!!!");
         [self displayAlert:@"Correct!"];
     } else {
-        NSLog(@"BS");
         [self displayAlert:@"Wrong!"];
     }
     
@@ -76,6 +77,9 @@ NSArray *answerArray;
         
         [self dismissViewControllerAnimated:TRUE completion:nil];
         
+        if ([alertMessage isEqualToString:@"Correct!"]) {
+            [self nextQuestion];
+        }
     }];
     
     [alertController addAction:action];
@@ -90,6 +94,18 @@ NSArray *answerArray;
     }
     
     return questionAnswerArray;
+}
+
+-(void)nextQuestion {
+
+    if (currentQuestionIndex < _subCategory.questionArray.count -1) {
+        currentQuestionIndex++;
+        question = _subCategory.questionArray[currentQuestionIndex];
+        _questionLabel.text = question.question;
+        [_questionAnswerTableView reloadData];
+    } else {
+        NSLog(@"you won a badge!");
+    }
 }
 
 /*

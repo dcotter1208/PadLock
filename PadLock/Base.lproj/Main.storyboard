@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KcP-8H-Tme">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KcP-8H-Tme">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -159,7 +159,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="answerCell" id="Xir-n1-Z8W">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xir-n1-Z8W" id="0rf-cw-Pw4">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -177,6 +177,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vk8-Dp-2NN"/>
                     <connections>
+                        <outlet property="questionAnswerTableView" destination="KNn-9h-4Yd" id="yeU-42-m7Q"/>
                         <outlet property="questionLabel" destination="TOJ-e4-7Od" id="keq-qT-ygK"/>
                     </connections>
                 </viewController>
