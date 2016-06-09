@@ -8,6 +8,7 @@
 
 #import "TriviaQuestionViewController.h"
 #import "Question.h"
+#import "Badge.h"
 
 @interface TriviaQuestionViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *questionAnswerTableView;
@@ -104,6 +105,7 @@ int currentQuestionIndex;
         _questionLabel.text = question.question;
         [_questionAnswerTableView reloadData];
     } else {
+        Badge *badge = [[Badge alloc]initWithBadgeLevel:@"Level 1" andBadgeImage:[UIImage imageNamed:@"badge"]];
         NSLog(@"you won a badge!");
     }
 }

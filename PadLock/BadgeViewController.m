@@ -1,24 +1,21 @@
 //
-//  IntroViewController.m
+//  BadgeViewController.m
 //  PadLock
 //
-//  Created by Srinivas Bodhanampati on 6/8/16.
+//  Created by Srinivas Bodhanampati on 6/9/16.
 //  Copyright © 2016 DetroitLabs. All rights reserved.
 //
 
-#import "IntroViewController.h"
+#import "BadgeViewController.h"
 
-@interface IntroViewController ()
+@interface BadgeViewController ()
 
 @end
 
-@implementation IntroViewController
-
-NSMutableArray *badgeArray;
+@implementation BadgeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    badgeArray = [[NSMutableArray alloc]init];
     // Do any additional setup after loading the view.
 }
 

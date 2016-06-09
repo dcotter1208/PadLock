@@ -20,6 +20,9 @@
 		B8A75D251D08AEFC004C5A5A /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D241D08AEFC004C5A5A /* SubCategoryViewController.m */; };
 		B8A75D281D09A92A004C5A5A /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D271D09A92A004C5A5A /* Question.m */; };
 		B8A75D2B1D09B372004C5A5A /* TriviaQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D2A1D09B372004C5A5A /* TriviaQuestionViewController.m */; };
+		B8A75D2E1D09DB70004C5A5A /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D2D1D09DB70004C5A5A /* Badge.m */; };
+		B8A75D311D09DD73004C5A5A /* BadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D301D09DD73004C5A5A /* BadgeViewController.m */; };
+		B8A75D331D09E05E004C5A5A /* badge.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A75D321D09E05E004C5A5A /* badge.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,11 @@
 		B8A75D271D09A92A004C5A5A /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		B8A75D291D09B372004C5A5A /* TriviaQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriviaQuestionViewController.h; sourceTree = "<group>"; };
 		B8A75D2A1D09B372004C5A5A /* TriviaQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriviaQuestionViewController.m; sourceTree = "<group>"; };
+		B8A75D2C1D09DB70004C5A5A /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Badge.h; sourceTree = "<group>"; };
+		B8A75D2D1D09DB70004C5A5A /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Badge.m; sourceTree = "<group>"; };
+		B8A75D2F1D09DD73004C5A5A /* BadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
+		B8A75D301D09DD73004C5A5A /* BadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeViewController.m; sourceTree = "<group>"; };
+		B8A75D321D09E05E004C5A5A /* badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,7 @@
 				430D12A31D089822003F8724 /* AppDelegate.m */,
 				430D12A81D089822003F8724 /* Main.storyboard */,
 				430D12AB1D089822003F8724 /* Assets.xcassets */,
+				B8A75D321D09E05E004C5A5A /* badge.png */,
 				430D12AD1D089822003F8724 /* LaunchScreen.storyboard */,
 				430D12B61D089893003F8724 /* .gitignore */,
 				430D12B01D089822003F8724 /* Info.plist */,
@@ -111,6 +120,8 @@
 				B8A75D241D08AEFC004C5A5A /* SubCategoryViewController.m */,
 				B8A75D291D09B372004C5A5A /* TriviaQuestionViewController.h */,
 				B8A75D2A1D09B372004C5A5A /* TriviaQuestionViewController.m */,
+				B8A75D2F1D09DD73004C5A5A /* BadgeViewController.h */,
+				B8A75D301D09DD73004C5A5A /* BadgeViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -124,6 +135,8 @@
 				B8A75D211D08AE5D004C5A5A /* SubCategory.m */,
 				B8A75D261D09A92A004C5A5A /* Question.h */,
 				B8A75D271D09A92A004C5A5A /* Question.m */,
+				B8A75D2C1D09DB70004C5A5A /* Badge.h */,
+				B8A75D2D1D09DB70004C5A5A /* Badge.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 			files = (
 				430D12B71D089893003F8724 /* .gitignore in Resources */,
 				430D12AF1D089822003F8724 /* LaunchScreen.storyboard in Resources */,
+				B8A75D331D09E05E004C5A5A /* badge.png in Resources */,
 				430D12AC1D089822003F8724 /* Assets.xcassets in Resources */,
 				430D12AA1D089822003F8724 /* Main.storyboard in Resources */,
 			);
@@ -202,10 +216,12 @@
 				B8A75D251D08AEFC004C5A5A /* SubCategoryViewController.m in Sources */,
 				430D12A41D089822003F8724 /* AppDelegate.m in Sources */,
 				B8A75D2B1D09B372004C5A5A /* TriviaQuestionViewController.m in Sources */,
+				B8A75D2E1D09DB70004C5A5A /* Badge.m in Sources */,
 				B8A75D1B1D08A047004C5A5A /* CategoryTableViewController.m in Sources */,
 				B8A75D1E1D08A0BF004C5A5A /* Category.m in Sources */,
 				B8A75D171D089FBC004C5A5A /* IntroViewController.m in Sources */,
 				B8A75D281D09A92A004C5A5A /* Question.m in Sources */,
+				B8A75D311D09DD73004C5A5A /* BadgeViewController.m in Sources */,
 				B8A75D221D08AE5D004C5A5A /* SubCategory.m in Sources */,
 				430D12A11D089822003F8724 /* main.m in Sources */,
 			);
