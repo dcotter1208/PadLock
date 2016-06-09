@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "SubCategory.h"
+#import "Badge.h"
 
 @interface TriviaQuestionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) SubCategory *subCategory;
+@property (strong, nonatomic) NSMutableArray *badgeArray;
+
 
 
 @end
