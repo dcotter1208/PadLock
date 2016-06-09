@@ -36,16 +36,18 @@ NSArray *categoryArray;
     
     Question *nflQuestion1 = [[Question alloc]initWithQuestion:@"Who is the owner of Detroit Lions frainchise?" andWrongAnswerOne:@"William Ford" andWrongAnswerTwo:@"Barak Obama" andCorrectAnswer:@"Martha Firestone"];
     
-    nflQuestion1.answerArray = @[nflQuestion1.wrongAnswerOne, nflQuestion1.wrongAnswerTwo, nflQuestion1.correctAnswer];
+    nflQuestion1.answerArray = [NSMutableArray arrayWithObjects:nflQuestion1.wrongAnswerOne, nflQuestion1.wrongAnswerTwo, nflQuestion1.correctAnswer, nil];
 
     Question *nflQuestion2 = [[Question alloc]initWithQuestion:@"Which team made a recent move to Los Angeles?"
         andWrongAnswerOne:@"Oakland Raiders" andWrongAnswerTwo:@"SanDiego Chargers" andCorrectAnswer:@"St. Louis Rams"];
-    nflQuestion2.answerArray = @[nflQuestion2.wrongAnswerOne, nflQuestion2.wrongAnswerTwo, nflQuestion2.correctAnswer];
+    
+    
+    nflQuestion2.answerArray = [NSMutableArray arrayWithObjects:nflQuestion2.wrongAnswerOne, nflQuestion2.wrongAnswerTwo, nflQuestion2.correctAnswer, nil];
     
     Question *nflQuestion3 = [[Question alloc]initWithQuestion:@"Who is the starting QB of Minnesota Vikings"
         andWrongAnswerOne:@"Brandon Manson" andWrongAnswerTwo:@"Mark Sanchez" andCorrectAnswer:@"Teddy Bridgewater"];
     
-    nflQuestion3.answerArray = @[nflQuestion3.wrongAnswerOne, nflQuestion3.wrongAnswerTwo, nflQuestion3.correctAnswer];
+    nflQuestion3.answerArray = [NSMutableArray arrayWithObjects:nflQuestion3.wrongAnswerOne, nflQuestion3.wrongAnswerTwo, nflQuestion3.correctAnswer, nil];
     
     SubCategory *subCat1 = [[SubCategory alloc]initWithSubCategoryName:@"NFL" andQuestionArray:@[nflQuestion1, nflQuestion2, nflQuestion3]];
     SubCategory *subCat2 = [[SubCategory alloc]initWithSubCategoryName:@"NBA" andQuestionArray:@[@""]];

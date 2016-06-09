@@ -10,17 +10,23 @@
 #import "Question.h"
 
 @interface TriviaQuestionViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *questionAnswerTableView;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @end
 
 Question *question;
+NSArray *answerArray;
+int currentQuestionIndex;
 
 @implementation TriviaQuestionViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+//    [self.navigationController setNavigationBarHidden:true];
     
-    question = _subCategory.questionArray[0];
+    [super viewDidLoad];
+    currentQuestionIndex = 0;
+    question = _subCategory.questionArray[currentQuestionIndex];
+    [self shuffleArray:question.answerArray];
     _questionLabel.text = question.question;
     
 }
@@ -48,10 +54,6 @@ Question *question;
     NSString *selectedAnswer = [question.answerArray objectAtIndex:tableView.indexPathForSelectedRow.row];
     
     [self checkForAnswerCorrectness:selectedAnswer];
-    
-   // NSLog(@"Selected Row: %@", [question.answerArray objectAtIndex:tableView.indexPathForSelectedRow.row]);
-    
-    
 
 }
 
@@ -59,10 +61,8 @@ Question *question;
 -(void)checkForAnswerCorrectness:(NSString *)answer {
     
     if ([answer isEqualToString:question.correctAnswer]) {
-        NSLog(@"Correct Answer!!!");
         [self displayAlert:@"Correct!"];
     } else {
-        NSLog(@"BS");
         [self displayAlert:@"Wrong!"];
     }
     
@@ -77,10 +77,35 @@ Question *question;
         
         [self dismissViewControllerAnimated:TRUE completion:nil];
         
+        if ([alertMessage isEqualToString:@"Correct!"]) {
+            [self nextQuestion];
+        }
     }];
     
     [alertController addAction:action];
     
+}
+
+-(NSArray *)shuffleArray:(NSMutableArray *)questionAnswerArray {
+    
+    for (int i = 0; i < questionAnswerArray.count; i++) {
+        int randomInt = arc4random() % [questionAnswerArray count];
+        [questionAnswerArray exchangeObjectAtIndex:i withObjectAtIndex:randomInt];
+    }
+    
+    return questionAnswerArray;
+}
+
+-(void)nextQuestion {
+
+    if (currentQuestionIndex < _subCategory.questionArray.count -1) {
+        currentQuestionIndex++;
+        question = _subCategory.questionArray[currentQuestionIndex];
+        _questionLabel.text = question.question;
+        [_questionAnswerTableView reloadData];
+    } else {
+        NSLog(@"you won a badge!");
+    }
 }
 
 /*
