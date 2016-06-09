@@ -14,6 +14,7 @@
 @end
 
 Question *question;
+NSArray *answerArray;
 
 @implementation TriviaQuestionViewController
 
@@ -21,6 +22,8 @@ Question *question;
     [super viewDidLoad];
     
     question = _subCategory.questionArray[0];
+    [self shuffleArray:question.answerArray];
+    NSLog(@"Answer Array: %@", question.answerArray.description);
     _questionLabel.text = question.question;
     
 }
@@ -48,10 +51,6 @@ Question *question;
     NSString *selectedAnswer = [question.answerArray objectAtIndex:tableView.indexPathForSelectedRow.row];
     
     [self checkForAnswerCorrectness:selectedAnswer];
-    
-   // NSLog(@"Selected Row: %@", [question.answerArray objectAtIndex:tableView.indexPathForSelectedRow.row]);
-    
-    
 
 }
 
@@ -81,6 +80,16 @@ Question *question;
     
     [alertController addAction:action];
     
+}
+
+-(NSArray *)shuffleArray:(NSMutableArray *)questionAnswerArray {
+    
+    for (int i = 0; i < questionAnswerArray.count; i++) {
+        int randomInt = arc4random() % [questionAnswerArray count];
+        [questionAnswerArray exchangeObjectAtIndex:i withObjectAtIndex:randomInt];
+    }
+    
+    return questionAnswerArray;
 }
 
 /*

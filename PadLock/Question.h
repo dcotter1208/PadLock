@@ -15,7 +15,7 @@
 @property (strong, nonatomic) NSString *wrongAnswerTwo;
 @property (strong, nonatomic) NSString *correctAnswer;
 
-@property (strong, nonatomic) NSArray *answerArray;
+@property (strong, nonatomic) NSMutableArray *answerArray;
 
 -(id)initWithQuestion:(NSString *)question andWrongAnswerOne:(NSString *)wrongAnswerOne andWrongAnswerTwo:(NSString *)wrongAnswerTwo andCorrectAnswer:(NSString *)correctAnswer;
 
