@@ -7,6 +7,7 @@
 //
 
 #import "IntroViewController.h"
+#import "TriviaQuestionViewController.h"
 
 @interface IntroViewController ()
 
@@ -19,7 +20,6 @@ NSMutableArray *badgeArray;
 - (void)viewDidLoad {
     [super viewDidLoad];
     badgeArray = [[NSMutableArray alloc]init];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,14 +27,12 @@ NSMutableArray *badgeArray;
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(IBAction) unwindToIntroVC:(UIStoryboardSegue *)unwindSegue {
+    TriviaQuestionViewController *srcViewController = [unwindSegue sourceViewController];
+    
+    badgeArray = srcViewController.badgeArray;
+    NSLog(@"%@",badgeArray.description);
 }
-*/
+
 
 @end

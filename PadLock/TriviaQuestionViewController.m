@@ -23,8 +23,8 @@ int currentQuestionIndex;
 
 - (void)viewDidLoad {
 //    [self.navigationController setNavigationBarHidden:true];
-    
     [super viewDidLoad];
+    _badgeArray = [[NSMutableArray alloc]init];
     currentQuestionIndex = 0;
     question = _subCategory.questionArray[currentQuestionIndex];
     [self shuffleArray:question.answerArray];
@@ -102,11 +102,13 @@ int currentQuestionIndex;
     if (currentQuestionIndex < _subCategory.questionArray.count -1) {
         currentQuestionIndex++;
         question = _subCategory.questionArray[currentQuestionIndex];
+        [self shuffleArray:question.answerArray];
         _questionLabel.text = question.question;
         [_questionAnswerTableView reloadData];
     } else {
         Badge *badge = [[Badge alloc]initWithBadgeLevel:@"Level 1" andBadgeImage:[UIImage imageNamed:@"badge"]];
-        NSLog(@"you won a badge!");
+        [_badgeArray addObject:badge];
+        NSLog(@"Badge array count: %lu", _badgeArray.count);
     }
 }
 

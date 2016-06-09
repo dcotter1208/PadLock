@@ -48,7 +48,7 @@
     NSIndexPath *indexPath = [_subCategoryTableView indexPathForSelectedRow];
     
     destVC.subCategory = [_subCategoryArray objectAtIndex:indexPath.row];
-    
 }
+
 
 @end

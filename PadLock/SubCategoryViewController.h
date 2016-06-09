@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Category.h"
+#import "TriviaQuestionViewController.h"
 
 @interface SubCategoryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
