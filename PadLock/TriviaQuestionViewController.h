@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SubCategory.h"
 
-@interface TriviaQuestionViewController : UIViewController
+@interface TriviaQuestionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) SubCategory *subCategory;
 
