@@ -23,11 +23,7 @@ NSArray *categoryArray;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupTriviaQuestionsAndCategories];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +36,6 @@ NSArray *categoryArray;
     SubCategory *subCat1 = [[SubCategory alloc]initWithSubCategoryName:@"NFL" andQuestionArray:@[@""]];
     SubCategory *subCat2 = [[SubCategory alloc]initWithSubCategoryName:@"NBA" andQuestionArray:@[@""]];
 
-    
     Category *category1 = [[Category alloc]initWithCategoryName:@"Sports" andSubCategoryArray:@[subCat1, subCat2]];
     Category *category2 = [[Category alloc]initWithCategoryName:@"Movies" andSubCategoryArray:@[@""]];
     Category *category3 = [[Category alloc]initWithCategoryName:@"History" andSubCategoryArray:@[@""]];
@@ -70,11 +65,9 @@ NSArray *categoryArray;
     SubCategoryViewController *destVC = [segue destinationViewController];
     
     NSIndexPath *indexPath = [_categoryTableView indexPathForSelectedRow];
-    
-    //Similar to the cellForRowAtIndexPath in the tableView method we make a new category object and assign it to the obejct and indexPath.row. This grabs our selected object.
+
     Category *category = [categoryArray objectAtIndex:indexPath.row];
 
-    //We use that selected object 'category' and access its 'subCategoryArray' then set the subCategoryArray on the destVC with that array.
     destVC.subCategoryArray = category.subCategoryArray;
 }
 

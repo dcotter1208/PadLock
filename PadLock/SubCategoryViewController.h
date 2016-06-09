@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Category.h"
 
-@interface SubCategoryViewController : UIViewController
+@interface SubCategoryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property(strong, nonatomic) NSArray *subCategoryArray;
 
