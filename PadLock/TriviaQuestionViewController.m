@@ -43,6 +43,46 @@ Question *question;
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *selectedAnswer = [question.answerArray objectAtIndex:tableView.indexPathForSelectedRow.row];
+    
+    [self checkForAnswerCorrectness:selectedAnswer];
+    
+   // NSLog(@"Selected Row: %@", [question.answerArray objectAtIndex:tableView.indexPathForSelectedRow.row]);
+    
+    
+
+}
+
+
+-(void)checkForAnswerCorrectness:(NSString *)answer {
+    
+    if ([answer isEqualToString:question.correctAnswer]) {
+        NSLog(@"Correct Answer!!!");
+        [self displayAlert:@"Correct!"];
+    } else {
+        NSLog(@"BS");
+        [self displayAlert:@"Wrong!"];
+    }
+    
+}
+
+-(void)displayAlert:(NSString *)alertMessage {
+   
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertMessage message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:alertController animated:TRUE completion:nil];
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [self dismissViewControllerAnimated:TRUE completion:nil];
+        
+    }];
+    
+    [alertController addAction:action];
+    
+}
+
 /*
 #pragma mark - Navigation
 
