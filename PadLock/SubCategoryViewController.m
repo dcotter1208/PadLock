@@ -7,9 +7,11 @@
 //
 
 #import "SubCategoryViewController.h"
+#import "TriviaQuestionViewController.h"
 #import "SubCategory.h"
 
 @interface SubCategoryViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *subCategoryTableView;
 
 @end
 
@@ -38,6 +40,15 @@
     cell.textLabel.text = subCategory.subCategoryName;
     
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    TriviaQuestionViewController *destVC = [segue destinationViewController];
+    
+    NSIndexPath *indexPath = [_subCategoryTableView indexPathForSelectedRow];
+    
+    destVC.subCategory = [_subCategoryArray objectAtIndex:indexPath.row];
+    
 }
 
 @end
