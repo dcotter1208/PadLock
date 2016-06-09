@@ -19,6 +19,7 @@
 		B8A75D221D08AE5D004C5A5A /* SubCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D211D08AE5D004C5A5A /* SubCategory.m */; };
 		B8A75D251D08AEFC004C5A5A /* SubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D241D08AEFC004C5A5A /* SubCategoryViewController.m */; };
 		B8A75D281D09A92A004C5A5A /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D271D09A92A004C5A5A /* Question.m */; };
+		B8A75D2B1D09B372004C5A5A /* TriviaQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D2A1D09B372004C5A5A /* TriviaQuestionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		B8A75D241D08AEFC004C5A5A /* SubCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryViewController.m; sourceTree = "<group>"; };
 		B8A75D261D09A92A004C5A5A /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		B8A75D271D09A92A004C5A5A /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		B8A75D291D09B372004C5A5A /* TriviaQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriviaQuestionViewController.h; sourceTree = "<group>"; };
+		B8A75D2A1D09B372004C5A5A /* TriviaQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriviaQuestionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				B8A75D1A1D08A047004C5A5A /* CategoryTableViewController.m */,
 				B8A75D231D08AEFC004C5A5A /* SubCategoryViewController.h */,
 				B8A75D241D08AEFC004C5A5A /* SubCategoryViewController.m */,
+				B8A75D291D09B372004C5A5A /* TriviaQuestionViewController.h */,
+				B8A75D2A1D09B372004C5A5A /* TriviaQuestionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			files = (
 				B8A75D251D08AEFC004C5A5A /* SubCategoryViewController.m in Sources */,
 				430D12A41D089822003F8724 /* AppDelegate.m in Sources */,
+				B8A75D2B1D09B372004C5A5A /* TriviaQuestionViewController.m in Sources */,
 				B8A75D1B1D08A047004C5A5A /* CategoryTableViewController.m in Sources */,
 				B8A75D1E1D08A0BF004C5A5A /* Category.m in Sources */,
 				B8A75D171D089FBC004C5A5A /* IntroViewController.m in Sources */,

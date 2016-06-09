@@ -17,6 +17,6 @@
 
 @property (strong, nonatomic) NSArray *answerArray;
 
--(id)initWithQuestion:(NSString *)question andWrongAnswerOne:(NSString *)wrongAnswerOne andWrongAnswerTwo:(NSString *)wrongAnswerTwo andCorrectAnswer:(NSString *)correctAnswer andAnswerArray:(NSArray *)answerArray;
+-(id)initWithQuestion:(NSString *)question andWrongAnswerOne:(NSString *)wrongAnswerOne andWrongAnswerTwo:(NSString *)wrongAnswerTwo andCorrectAnswer:(NSString *)correctAnswer;
 
 @end

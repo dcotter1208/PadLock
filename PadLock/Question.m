@@ -10,7 +10,7 @@
 
 @implementation Question
 
--(id)initWithQuestion:(NSString *)question andWrongAnswerOne:(NSString *)wrongAnswerOne andWrongAnswerTwo:(NSString *)wrongAnswerTwo andCorrectAnswer:(NSString *)correctAnswer andAnswerArray:(NSArray *)answerArray {
+-(id)initWithQuestion:(NSString *)question andWrongAnswerOne:(NSString *)wrongAnswerOne andWrongAnswerTwo:(NSString *)wrongAnswerTwo andCorrectAnswer:(NSString *)correctAnswer{
     
     self = [super init];
     
@@ -19,7 +19,6 @@
         _wrongAnswerOne = wrongAnswerOne;
         _wrongAnswerTwo = wrongAnswerTwo;
         _correctAnswer = correctAnswer;
-        _answerArray = answerArray;
     }
     return self;
     

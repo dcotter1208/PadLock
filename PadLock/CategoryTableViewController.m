@@ -34,13 +34,18 @@ NSArray *categoryArray;
 
 -(void)setupTriviaQuestionsAndCategories {
     
-    Question *nflQuestion1 = [[Question alloc]initWithQuestion:@"Who is the owner of Detroit Lions frainchise?" andWrongAnswerOne:@"William Ford" andWrongAnswerTwo:@"Barak Obama" andCorrectAnswer:@"Martha Firestone" andAnswerArray:@[nflQuestion1.wrongAnswerOne, nflQuestion1.wrongAnswerTwo, nflQuestion1.correctAnswer]];
+    Question *nflQuestion1 = [[Question alloc]initWithQuestion:@"Who is the owner of Detroit Lions frainchise?" andWrongAnswerOne:@"William Ford" andWrongAnswerTwo:@"Barak Obama" andCorrectAnswer:@"Martha Firestone"];
+    
+    nflQuestion1.answerArray = @[nflQuestion1.wrongAnswerOne, nflQuestion1.wrongAnswerTwo, nflQuestion1.correctAnswer];
 
     Question *nflQuestion2 = [[Question alloc]initWithQuestion:@"Which team made a recent move to Los Angeles?"
-        andWrongAnswerOne:@"Oakland Raiders" andWrongAnswerTwo:@"SanDiego Chargers" andCorrectAnswer:@"St. Louis Rams"andAnswerArray:@[nflQuestion2.wrongAnswerOne, nflQuestion2.wrongAnswerTwo, nflQuestion2.correctAnswer]];
+        andWrongAnswerOne:@"Oakland Raiders" andWrongAnswerTwo:@"SanDiego Chargers" andCorrectAnswer:@"St. Louis Rams"];
+    nflQuestion2.answerArray = @[nflQuestion2.wrongAnswerOne, nflQuestion2.wrongAnswerTwo, nflQuestion2.correctAnswer];
     
     Question *nflQuestion3 = [[Question alloc]initWithQuestion:@"Who is the starting QB of Minnesota Vikings"
-        andWrongAnswerOne:@"Brandon Manson" andWrongAnswerTwo:@"Mark Sanchez" andCorrectAnswer:@"Teddy Bridgewater"andAnswerArray:@[nflQuestion3.wrongAnswerOne, nflQuestion3.wrongAnswerTwo, nflQuestion3.correctAnswer]];
+        andWrongAnswerOne:@"Brandon Manson" andWrongAnswerTwo:@"Mark Sanchez" andCorrectAnswer:@"Teddy Bridgewater"];
+    
+    nflQuestion3.answerArray = @[nflQuestion3.wrongAnswerOne, nflQuestion3.wrongAnswerTwo, nflQuestion3.correctAnswer];
     
     SubCategory *subCat1 = [[SubCategory alloc]initWithSubCategoryName:@"NFL" andQuestionArray:@[nflQuestion1, nflQuestion2, nflQuestion3]];
     SubCategory *subCat2 = [[SubCategory alloc]initWithSubCategoryName:@"NBA" andQuestionArray:@[@""]];
