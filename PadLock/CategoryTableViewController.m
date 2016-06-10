@@ -32,20 +32,49 @@ NSArray *categoryArray;
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - Table view data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    return [categoryArray count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
+    Category *category = [categoryArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = category.categoryName;
+    
+    return cell;
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    SubCategoryViewController *destVC = [segue destinationViewController];
+    NSIndexPath *indexPath = [_categoryTableView indexPathForSelectedRow];
+    Category *category = [categoryArray objectAtIndex:indexPath.row];
+    destVC.subCategoryArray = category.subCategoryArray;
+    
+}
+
+#pragma mark - Create Trivia Questions and Categories
 -(void)setupTriviaQuestionsAndCategories {
     
     // NFL Trivia questions
     Question *nflQuestion1 = [[Question alloc]initWithQuestion:@"Who is the owner of Detroit Lions frainchise?" andWrongAnswerOne:@"William Ford" andWrongAnswerTwo:@"Barak Obama" andCorrectAnswer:@"Martha Firestone"];
     
     nflQuestion1.answerArray = [NSMutableArray arrayWithObjects:nflQuestion1.wrongAnswerOne, nflQuestion1.wrongAnswerTwo, nflQuestion1.correctAnswer, nil];
-
+    
     Question *nflQuestion2 = [[Question alloc]initWithQuestion:@"Which team made a recent move to Los Angeles?"
-        andWrongAnswerOne:@"Oakland Raiders" andWrongAnswerTwo:@"SanDiego Chargers" andCorrectAnswer:@"St. Louis Rams"];
+                                             andWrongAnswerOne:@"Oakland Raiders" andWrongAnswerTwo:@"SanDiego Chargers" andCorrectAnswer:@"St. Louis Rams"];
     
     nflQuestion2.answerArray = [NSMutableArray arrayWithObjects:nflQuestion2.wrongAnswerOne, nflQuestion2.wrongAnswerTwo, nflQuestion2.correctAnswer, nil];
     
     Question *nflQuestion3 = [[Question alloc]initWithQuestion:@"Who is the starting QB of Minnesota Vikings"
-        andWrongAnswerOne:@"Brandon Manson" andWrongAnswerTwo:@"Mark Sanchez" andCorrectAnswer:@"Teddy Bridgewater"];
+                                             andWrongAnswerOne:@"Brandon Manson" andWrongAnswerTwo:@"Mark Sanchez" andCorrectAnswer:@"Teddy Bridgewater"];
     
     nflQuestion3.answerArray = [NSMutableArray arrayWithObjects:nflQuestion3.wrongAnswerOne, nflQuestion3.wrongAnswerTwo, nflQuestion3.correctAnswer, nil];
     
@@ -120,40 +149,12 @@ NSArray *categoryArray;
     SubCategory *subCat4 = [[SubCategory alloc]initWithSubCategoryName:@"Comedy" andQuestionArray:@[comedyMovieQuestion1,  comedyMovieQuestion2, comedyMovieQuestion3]];
     SubCategory *subCat5 = [[SubCategory alloc]initWithSubCategoryName:@"United States" andQuestionArray:@[usaHistoryQuestion1, usaHistoryQuestion2, usaHistoryQuestion3]];
     SubCategory *subCat6 = [[SubCategory alloc]initWithSubCategoryName:@"World" andQuestionArray:@[worldHistoryQuestion1, worldHistoryQuestion2, worldHistoryQuestion3]];
-
+    
     Category *category1 = [[Category alloc]initWithCategoryName:@"Sports" andSubCategoryArray:@[subCat1, subCat2]];
     Category *category2 = [[Category alloc]initWithCategoryName:@"Movies" andSubCategoryArray:@[subCat3, subCat4]];
     Category *category3 = [[Category alloc]initWithCategoryName:@"History" andSubCategoryArray:@[subCat5, subCat6]];
     
     categoryArray = @[category1,category2,category3];
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return [categoryArray count];
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
-
-    Category *category = [categoryArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = category.categoryName;
-    
-    return cell;
-}
-
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    SubCategoryViewController *destVC = [segue destinationViewController];
-    
-    NSIndexPath *indexPath = [_categoryTableView indexPathForSelectedRow];
-
-    Category *category = [categoryArray objectAtIndex:indexPath.row];
-
-    destVC.subCategoryArray = category.subCategoryArray;
 }
 
 @end

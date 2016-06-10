@@ -14,7 +14,6 @@
 @interface TriviaQuestionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) SubCategory *subCategory;
-@property (strong, nonatomic) NSMutableArray *badgeArray;
 @property (strong, nonatomic) RLMRealm *realm;
 
 
