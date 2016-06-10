@@ -93,6 +93,8 @@
 		430D129E1D089822003F8724 /* PadLock */ = {
 			isa = PBXGroup;
 			children = (
+				B8A75D181D089FC0004C5A5A /* Controllers */,
+				B8A75D1F1D08A0C3004C5A5A /* Model */,
 				430D12A21D089822003F8724 /* AppDelegate.h */,
 				430D12A31D089822003F8724 /* AppDelegate.m */,
 				430D12A81D089822003F8724 /* Main.storyboard */,
@@ -102,8 +104,6 @@
 				430D12B61D089893003F8724 /* .gitignore */,
 				430D12B01D089822003F8724 /* Info.plist */,
 				430D129F1D089822003F8724 /* Supporting Files */,
-				B8A75D181D089FC0004C5A5A /* Controllers */,
-				B8A75D1F1D08A0C3004C5A5A /* Model */,
 			);
 			path = PadLock;
 			sourceTree = "<group>";

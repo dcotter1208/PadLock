@@ -13,6 +13,7 @@
 @interface TriviaQuestionViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *questionAnswerTableView;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *padLockImageView;
 @end
 
 Question *question;
@@ -66,23 +67,23 @@ int currentQuestionIndex;
 -(void)checkForAnswerCorrectness:(NSString *)answer {
     
     if ([answer isEqualToString:question.correctAnswer]) {
-        [self displayAlert:@"Correct!"];
+        [self displayAlert:@"Correct!" alertMessage:nil];
     } else {
-        [self displayAlert:@"Wrong!"];
+        [self displayAlert:@"Wrong!" alertMessage:nil];
     }
     
 }
 
--(void)displayAlert:(NSString *)alertMessage {
+-(void)displayAlert:(NSString *)alertTitle alertMessage:(NSString *)alertMessage {
    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertMessage message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle message:alertMessage preferredStyle:UIAlertControllerStyleAlert];
     [self presentViewController:alertController animated:TRUE completion:nil];
     
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
         [self dismissViewControllerAnimated:TRUE completion:nil];
         
-        if ([alertMessage isEqualToString:@"Correct!"]) {
+        if ([alertTitle isEqualToString:@"Correct!"]) {
             [self nextQuestion];
         }
     }];
@@ -110,7 +111,9 @@ int currentQuestionIndex;
         _questionLabel.text = question.question;
         [_questionAnswerTableView reloadData];
     } else {
+        [_padLockImageView setImage:[UIImage imageNamed:@"padlockOpen"]];
         Badge *badge = [[Badge alloc]initWithBadgeLevel:@"Level 1" andBadgeImage:@"levelOne"];
+        [self displayAlert:@"Congrats!" alertMessage:[NSString stringWithFormat:@"you won a badge for %@. Check your earned badges by going to the start menu.", badge.level]];
         [self writeToRealm:badge];
     }
 }
