@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TriviaQuestionViewController.h"
 
 @interface IntroViewController : UIViewController
 

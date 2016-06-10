@@ -11,7 +11,6 @@
 @implementation Question
 
 -(id)initWithQuestion:(NSString *)question andWrongAnswerOne:(NSString *)wrongAnswerOne andWrongAnswerTwo:(NSString *)wrongAnswerTwo andCorrectAnswer:(NSString *)correctAnswer{
-    
     self = [super init];
     
     if (self) {
@@ -21,7 +20,6 @@
         _correctAnswer = correctAnswer;
     }
     return self;
-    
 }
 
 @end

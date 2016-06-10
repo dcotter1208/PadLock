@@ -11,7 +11,6 @@
 
 @interface BadgeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSMutableArray *badgeDisplayArray;
 @property(nonatomic, strong) RLMResults *badges;
 
 

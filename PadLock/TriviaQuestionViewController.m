@@ -17,29 +17,16 @@
 @end
 
 Question *question;
-NSArray *answerArray;
 int currentQuestionIndex;
-
 @implementation TriviaQuestionViewController
 
 - (void)viewDidLoad {
-//    [self.navigationController setNavigationBarHidden:true];
     [super viewDidLoad];
-    _realm = [RLMRealm defaultRealm];
-    
-    NSLog(@"%@", _realm.configuration.fileURL);
-    
-    _badgeArray = [[NSMutableArray alloc]init];
-    currentQuestionIndex = 0;
-    question = _subCategory.questionArray[currentQuestionIndex];
-    [self shuffleArray:question.answerArray];
-    _questionLabel.text = question.question;
-    
+    [self triviaQuestionViewControllerSetUp];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -47,8 +34,8 @@ int currentQuestionIndex;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"answerCell" forIndexPath:indexPath];
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"answerCell" forIndexPath:indexPath];
     cell.textLabel.text = [question.answerArray objectAtIndex:indexPath.row];
     
     return cell;
@@ -58,7 +45,6 @@ int currentQuestionIndex;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *selectedAnswer = [question.answerArray objectAtIndex:tableView.indexPathForSelectedRow.row];
-    
     [self checkForAnswerCorrectness:selectedAnswer];
 
 }
@@ -71,7 +57,14 @@ int currentQuestionIndex;
     } else {
         [self displayAlert:@"Wrong!" alertMessage:nil];
     }
-    
+}
+
+-(void)triviaQuestionViewControllerSetUp {
+    _realm = [RLMRealm defaultRealm];
+    currentQuestionIndex = 0;
+    question = _subCategory.questionArray[currentQuestionIndex];
+    [self shuffleArray:question.answerArray];
+    _questionLabel.text = question.question;
 }
 
 -(void)displayAlert:(NSString *)alertTitle alertMessage:(NSString *)alertMessage {
@@ -89,7 +82,6 @@ int currentQuestionIndex;
     }];
     
     [alertController addAction:action];
-    
 }
 
 -(NSArray *)shuffleArray:(NSMutableArray *)questionAnswerArray {
@@ -98,7 +90,6 @@ int currentQuestionIndex;
         int randomInt = arc4random() % [questionAnswerArray count];
         [questionAnswerArray exchangeObjectAtIndex:i withObjectAtIndex:randomInt];
     }
-    
     return questionAnswerArray;
 }
 
@@ -124,14 +115,5 @@ int currentQuestionIndex;
     [_realm commitWriteTransaction];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

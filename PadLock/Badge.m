@@ -11,14 +11,12 @@
 @implementation Badge
 
 -(id)initWithBadgeLevel:(NSString *)level andBadgeImage:(NSString *)badgeImage {
-    
     self = [super init];
     
     if (self) {
         _level = level;
         _badgeImage = badgeImage;
     }
-    
     return self;
 }
 

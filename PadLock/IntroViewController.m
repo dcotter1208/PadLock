@@ -7,9 +7,7 @@
 //
 
 #import "IntroViewController.h"
-#import "TriviaQuestionViewController.h"
-#import "BadgeViewController.h"
-
+#import "Realm/Realm.h"
 @interface IntroViewController ()
 
 @end
@@ -20,32 +18,16 @@ NSMutableArray *badgeArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    badgeArray = [[NSMutableArray alloc]init];
+//    RLMRealm *realm = [RLMRealm defaultRealm];
+//    NSLog(@"%@", realm.configuration.fileURL);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(IBAction) unwindToIntroVC:(UIStoryboardSegue *)unwindSegue {
-    TriviaQuestionViewController *srcViewController = [unwindSegue sourceViewController];
-    
-    badgeArray = srcViewController.badgeArray;
-    NSLog(@"%@",badgeArray.description);
+    //used to unwind from the NavBarButton "Start Menu" on TriviaQuestionViewController.
 }
-
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqualToString:@"toBadgeSegue"]) {
-        BadgeViewController *badgeVC = [segue destinationViewController];
-        NSLog(@"THIS IS THE BADGE ARRAY FROM INTRO: %@", badgeArray.description);
-        badgeVC.badgeDisplayArray = badgeArray;
-    }
-
-}
-
-
 
 @end
