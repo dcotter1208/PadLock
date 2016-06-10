@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BadgeViewController : UIViewController
+@interface BadgeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) NSMutableArray *badgeDisplayArray;
 
 @end

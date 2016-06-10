@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kog-wy-YA0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kog-wy-YA0">
                                 <rect key="frame" x="40" y="81" width="240" height="329"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -32,7 +32,7 @@
                                     <color key="titleColor" red="0.98054443930000001" green="0.9616504186" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="W3M-zo-dL7" kind="push" id="109-d3-BxH"/>
+                                    <segue destination="W3M-zo-dL7" kind="push" identifier="toCategorySegue" id="109-d3-BxH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,7 +41,7 @@
                     <navigationItem key="navigationItem" id="ctD-VZ-xTg">
                         <barButtonItem key="rightBarButtonItem" title="Badges" id="tn5-Hu-knJ">
                             <connections>
-                                <segue destination="mzy-bP-CPb" kind="push" id="1Np-eS-Eav"/>
+                                <segue destination="mzy-bP-CPb" kind="push" identifier="toBadgeSegue" id="1Np-eS-Eav"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
