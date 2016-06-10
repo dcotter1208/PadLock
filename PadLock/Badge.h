@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Realm/Realm.h"
 #import <UIKit/UIKit.h>
 
-@interface Badge : NSObject
+@interface Badge : RLMObject
 
-@property (strong, nonatomic) UIImage *badgeImage;
+@property (strong, nonatomic) NSString *badgeImage;
 @property (strong, nonatomic) NSString *level;
 
--(id)initWithBadgeLevel:(NSString *)level andBadgeImage:(UIImage *)badgeImage;
+-(id)initWithBadgeLevel:(NSString *)level andBadgeImage:(NSString *)badgeImage;
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation Badge
 
--(id)initWithBadgeLevel:(NSString *)level andBadgeImage:(UIImage *)badgeImage {
+-(id)initWithBadgeLevel:(NSString *)level andBadgeImage:(NSString *)badgeImage {
     
     self = [super init];
     

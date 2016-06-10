@@ -24,6 +24,10 @@ int currentQuestionIndex;
 - (void)viewDidLoad {
 //    [self.navigationController setNavigationBarHidden:true];
     [super viewDidLoad];
+    _realm = [RLMRealm defaultRealm];
+    
+    NSLog(@"%@", _realm.configuration.fileURL);
+    
     _badgeArray = [[NSMutableArray alloc]init];
     currentQuestionIndex = 0;
     question = _subCategory.questionArray[currentQuestionIndex];
@@ -106,10 +110,15 @@ int currentQuestionIndex;
         _questionLabel.text = question.question;
         [_questionAnswerTableView reloadData];
     } else {
-        Badge *badge = [[Badge alloc]initWithBadgeLevel:@"Level 1" andBadgeImage:[UIImage imageNamed:@"badge"]];
-        [_badgeArray addObject:badge];
-        NSLog(@"Badge array count: %lu", _badgeArray.count);
+        Badge *badge = [[Badge alloc]initWithBadgeLevel:@"Level 1" andBadgeImage:@"levelOne"];
+        [self writeToRealm:badge];
     }
+}
+
+-(void)writeToRealm:(Badge *)badge {
+    [_realm beginWriteTransaction];
+    [_realm addObject:badge];
+    [_realm commitWriteTransaction];
 }
 
 /*

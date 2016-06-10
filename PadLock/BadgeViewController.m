@@ -17,8 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@",_badgeDisplayArray.description);
-    // Do any additional setup after loading the view.
+    
+    _badges = [Badge allObjects];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,15 +28,15 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_badgeDisplayArray count];
+    return [_badges count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"badgeCell" forIndexPath:indexPath];
     
-    Badge *badge = [_badgeDisplayArray objectAtIndex:indexPath.row];
+    Badge *badge = [_badges objectAtIndex:indexPath.row];
     cell.textLabel.text = badge.level;
-    cell.imageView.image = badge.badgeImage;
+    cell.imageView.image = [UIImage imageNamed:badge.badgeImage];
     
     return cell;
 }
