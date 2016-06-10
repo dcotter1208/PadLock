@@ -8,6 +8,7 @@
 
 #import "IntroViewController.h"
 #import "TriviaQuestionViewController.h"
+#import "BadgeViewController.h"
 
 @interface IntroViewController ()
 
@@ -33,6 +34,18 @@ NSMutableArray *badgeArray;
     badgeArray = srcViewController.badgeArray;
     NSLog(@"%@",badgeArray.description);
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"toBadgeSegue"]) {
+        BadgeViewController *badgeVC = [segue destinationViewController];
+        NSLog(@"THIS IS THE BADGE ARRAY FROM INTRO: %@", badgeArray.description);
+        badgeVC.badgeDisplayArray = badgeArray;
+    }
+
+}
+
 
 
 @end
