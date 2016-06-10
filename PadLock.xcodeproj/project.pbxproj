@@ -13,6 +13,7 @@
 		430D12AC1D089822003F8724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430D12AB1D089822003F8724 /* Assets.xcassets */; };
 		430D12AF1D089822003F8724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 430D12AD1D089822003F8724 /* LaunchScreen.storyboard */; };
 		430D12B71D089893003F8724 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 430D12B61D089893003F8724 /* .gitignore */; };
+		B43C07AA71D5A88F2287ADB2 /* libPods-PadLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 671D623A39E3DE6AE40CD76D /* libPods-PadLock.a */; };
 		B8A75D171D089FBC004C5A5A /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D161D089FBC004C5A5A /* IntroViewController.m */; };
 		B8A75D1B1D08A047004C5A5A /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D1A1D08A047004C5A5A /* CategoryTableViewController.m */; };
 		B8A75D1E1D08A0BF004C5A5A /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A75D1D1D08A0BF004C5A5A /* Category.m */; };
@@ -35,6 +36,8 @@
 		430D12AE1D089822003F8724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		430D12B01D089822003F8724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		430D12B61D089893003F8724 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		671D623A39E3DE6AE40CD76D /* libPods-PadLock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PadLock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDB6FBCEE4AD50029AA9AC7 /* Pods-PadLock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PadLock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PadLock/Pods-PadLock.debug.xcconfig"; sourceTree = "<group>"; };
 		B8A75D151D089FBC004C5A5A /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		B8A75D161D089FBC004C5A5A /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 		B8A75D191D08A047004C5A5A /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		B8A75D2F1D09DD73004C5A5A /* BadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
 		B8A75D301D09DD73004C5A5A /* BadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeViewController.m; sourceTree = "<group>"; };
 		B8A75D321D09E05E004C5A5A /* badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge.png; sourceTree = "<group>"; };
+		FEBDAA02287C35D7A5AB9AF8 /* Pods-PadLock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PadLock.release.xcconfig"; path = "Pods/Target Support Files/Pods-PadLock/Pods-PadLock.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B43C07AA71D5A88F2287ADB2 /* libPods-PadLock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +77,8 @@
 			children = (
 				430D129E1D089822003F8724 /* PadLock */,
 				430D129D1D089822003F8724 /* Products */,
+				F7C47B17482EA8DAC5A26531 /* Pods */,
+				B5DBE4F0572FC2A96C22144C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +116,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B5DBE4F0572FC2A96C22144C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				671D623A39E3DE6AE40CD76D /* libPods-PadLock.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B8A75D181D089FC0004C5A5A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +156,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		F7C47B17482EA8DAC5A26531 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADDB6FBCEE4AD50029AA9AC7 /* Pods-PadLock.debug.xcconfig */,
+				FEBDAA02287C35D7A5AB9AF8 /* Pods-PadLock.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 430D12B31D089822003F8724 /* Build configuration list for PBXNativeTarget "PadLock" */;
 			buildPhases = (
+				3153DCFF9A491564D6CB15FD /* 📦 Check Pods Manifest.lock */,
 				430D12981D089822003F8724 /* Sources */,
 				430D12991D089822003F8724 /* Frameworks */,
 				430D129A1D089822003F8724 /* Resources */,
+				E8D46A535272FEA9F5E4911C /* 📦 Embed Pods Frameworks */,
+				7E167D5698BC8F2C479D6A7D /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +234,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3153DCFF9A491564D6CB15FD /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7E167D5698BC8F2C479D6A7D /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PadLock/Pods-PadLock-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8D46A535272FEA9F5E4911C /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PadLock/Pods-PadLock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		430D12981D089822003F8724 /* Sources */ = {
@@ -333,6 +408,7 @@
 		};
 		430D12B41D089822003F8724 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADDB6FBCEE4AD50029AA9AC7 /* Pods-PadLock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PadLock/Info.plist;
@@ -344,6 +420,7 @@
 		};
 		430D12B51D089822003F8724 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEBDAA02287C35D7A5AB9AF8 /* Pods-PadLock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PadLock/Info.plist;

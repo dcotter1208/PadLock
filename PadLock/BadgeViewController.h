@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Realm/Realm.h"
 
 @interface BadgeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSMutableArray *badgeDisplayArray;
+@property(nonatomic, strong) RLMResults *badges;
+
 
 @end
